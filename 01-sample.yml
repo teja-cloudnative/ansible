@@ -4,4 +4,3 @@
     - name: print Hello
       ansible.builtin.debug:
         msg: Hello
-        port: 9000

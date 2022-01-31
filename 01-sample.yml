@@ -2,6 +2,6 @@
   hosts: all
   tasks:
     - name: print Hello
-      ansible.buitin.debug:
+      ansible.builtin.debug:
         msg: Hello
         port: 9000

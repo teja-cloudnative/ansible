@@ -16,7 +16,7 @@
     src: /tmp/frontend-main/static/
     dest: /usr/share/nginx/html/
 - name: Start the Nginx Service
-    ansible.builtin.system:
+  ansible.builtin.system:
       name: nginx
       state: restarted
       enabled: yes

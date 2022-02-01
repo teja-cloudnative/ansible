@@ -10,8 +10,8 @@
 - name: Varaibles on Play Level
   hosts: all
   vars:
-    URL: teja.example.com
+    URL1: teja.example.com
   taks:
     - name: Print URL
       ansible.builtin.debug:
-        msg: {{URL}}
+        msg: {{URL1}}

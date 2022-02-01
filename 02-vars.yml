@@ -11,7 +11,7 @@
 - name: Variables from file in Play Level
   hosts: all
   vars_file:
-    - sample-vars.yml
+   - sample-vars.yml
   tasks:
     - name: Print URL
       ansible.builtin.debug:

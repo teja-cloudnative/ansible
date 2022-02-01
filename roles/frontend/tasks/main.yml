@@ -7,14 +7,17 @@
     src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
     dest: /tmp
     remote_src: yes
+
 - name: Remove all files from HTML directory
   ansible.builtin.file:
     path: /usr/share/nginx/html/
     state: absent
+
 - name: Copy roboshop content to HTML directory
   ansible.builtin.copy:
     src: /tmp/frontend-main/static/
     dest: /usr/share/nginx/html/
+
 - name: Start the Nginx Service
   ansible.builtin.system:
       name: nginx

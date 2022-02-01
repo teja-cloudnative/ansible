@@ -32,3 +32,19 @@
       vars:
         URL: task2.example.com
 #Note: Scope of task variable is only that task, the other tasks cannot access the other tasks variables.
+
+##Variable Precedence
+
+- name: Variable Precedence
+  hosts: all
+  vars:
+    URL: play.example.com
+  vars_files:
+    - sample-vars.yml
+  tasks:
+    - name: Print URL
+      ansible.builtin.debug:
+        msg: URL == {{URL}}
+      vars:
+        URL: task.example.com
+

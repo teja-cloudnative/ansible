@@ -33,6 +33,13 @@
         URL: task2.example.com
 #Note: Scope of task variable is only that task, the other tasks cannot access the other tasks variables.
 
+- name: Inventory Variable
+  hosts: all
+  tasks:
+    - name: Print URL
+      ansible.builtin.debug:
+        msg: URL == {{URL}}
+
 ##Variable Precedence
 
 - name: Variable Precedence

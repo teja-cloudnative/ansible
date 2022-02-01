@@ -2,6 +2,7 @@
   ansible.builtin.yum:
     name: nginx
     state: latest
+
 - name: Download Frontend  Content
   ansible.builtin.unarchive:
     src: https://github.com/roboshop-devops-project/frontend/archive/main.zip

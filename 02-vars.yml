@@ -14,4 +14,4 @@
   taks:
     - name: Print URL
       ansible.builtin.debug:
-        msg: {{URL1}}
+        msg: URL1 = {{URL1}}

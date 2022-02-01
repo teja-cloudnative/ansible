@@ -19,7 +19,7 @@
     dest: /usr/share/nginx/html/
 
 - name: Start the Nginx Service
-  ansible.builtin.system:
+  ansible.builtin.systemd:
     name: nginx
     state: restarted
     enabled: yes

@@ -10,7 +10,7 @@
 
 - name: Variables from file in Play Level
   hosts: all
-  vars_file:
+  vars_files:
    - sample-vars.yml
   tasks:
     - name: Print URL

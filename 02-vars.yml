@@ -66,3 +66,15 @@
     - name: Print host CPU Infornamtion
       ansible.builtin.debug:
         msg: "{{ansible_processor}}"
+
+# Print a runtime variable from output of previous task.
+
+- name: Register a Variable
+  hosts: all
+  tasks:
+    - name: Run Uptime Commmand
+      ansible.builtin.shell:
+      register: OUT
+    - name: Print OUT Variable
+      ansible.builtin.debug:
+        msg: OUTPUT = {{OUT.stdout}}

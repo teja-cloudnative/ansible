@@ -64,4 +64,5 @@
       ansible.builtin.debug:
         msg: Hostname = {{ansible_hostname}}
     - name: Print host CPU Infornamtion
+      ansible.builtin.debug:
         msg: "{{ansible_processor}}"

@@ -80,9 +80,9 @@
 #        msg: "{{OUT.stdout}}"
 
     - name: Declare a standard Variable
-      ansible.built.fact_set:
+      ansible.builtin.fact_set:
         UPTIME_STDOUT: "{{OUT.stdout}}"
 
     - name: Print UPTIME_STDOUT
-      ansible.built.debug:
+      ansible.builtin.debug:
         msg: "{{UPTIME_STDOUT}}"

@@ -14,5 +14,5 @@
   tasks:
     name: Print URL
     ansible.builtin.debug
-      msg: URL = {{teja.example.com}}
+      msg: URL = {{URL}}
 

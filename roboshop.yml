@@ -3,7 +3,7 @@
   become: yes
   roles:
     - frontend
-#- name: Setup Mongodb Componenet
+#- name: Setup Mongodb Component
 #  hosts: MONGODB
 #  roles:
 #    - mongodb

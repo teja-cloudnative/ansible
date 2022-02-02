@@ -63,6 +63,18 @@
     state: latest
   become_user: roboshop
 
+- name: Setup the Catalogue SystemD config file
+  ansible.builtin.template:
+    src: systemd.service
+    dest: /etc/systemd/system/catalogue.service
+
+- name: Start Catalogue Service
+  ansible.builtin.systemd:
+    name: catalogue
+    state: restarted
+    enabled: yes
+    daemon-reload: yes
+
 
 
 

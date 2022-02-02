@@ -1,4 +1,4 @@
-- name: Download {{COMPONENT}}  Content
+- name: Download {{COMPONENT}} from gir repo
   ansible.builtin.unarchive:
     src: https://github.com/roboshop-devops-project/{{COMPONENT}}/archive/main.zip
     dest: /tmp

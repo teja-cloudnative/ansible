@@ -10,8 +10,14 @@
   roles:
     - mongodb
 
-- name: Setup catalogue Component
+- name: Setup Catalogue Component
   hosts: CATALOGUE
   become: yes
   roles:
     - catalogue
+
+- name: Setup Redis Component
+  hosts: REDIS
+  become: yes
+  roles:
+    - redis

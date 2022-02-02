@@ -1,22 +1,4 @@
-#1. This service is written in NodeJS, Hence need to install NodeJS in the system.
-#
-#```bash
-#  # curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash -
-#  # yum install nodejs gcc-c++ -y
-#
-#```
-#
-#1. Let's now set up the catalogue application.
-#
-#As part of operating system standards, we run all the applications and databases as a normal user but not with root user.
-#
-#So to run the catalogue service we choose to run as a normal user and that user name should be more relevant to the project. Hence we will use `roboshop` as the username to run the service.
-#
-#```bash
-#  # useradd roboshop
-#
-#```
-#
+
 #1. So let's switch to the `roboshop` user and run the following commands.
 #
 #```bash
@@ -52,4 +34,29 @@
      - nodejs
      -  gcc-c++
     state: installed
+
+- name: Add application user
+  ansible.builtin.user:
+    name: roboshop
+    state: present
+
+- name: Download app code
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: download
+
+- name: Clean old app code
+  ansible.builtin.file:
+    path: /home/roboshop/catalogue
+    state: absent
+
+- name: Copy Content
+  ansible.builtin.copy:
+    src: /tmp/catalogue-main
+    dest: /home/roboshop/catalogue
+    remote_src: yes
+
+
+
+
 

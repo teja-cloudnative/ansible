@@ -21,7 +21,7 @@
     enabled: yes
 
 - name: Download database code
-  import_role:
+  ansible.builtin.import_role:
     name: common
     tasks_from: download
 

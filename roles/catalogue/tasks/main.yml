@@ -50,7 +50,7 @@
     path: /home/roboshop/catalogue
     state: absent
 
-- name: Copy Content
+- name: Copy App code
   ansible.builtin.copy:
     src: /tmp/catalogue-main
     dest: /home/roboshop/catalogue
@@ -60,7 +60,6 @@
 - name: Install Catalogue Dependencies.
   community.general.npm:
     path: /home/roboshop/catalogue
-    state: latest
   become_user: roboshop
 
 - name: Setup the Catalogue SystemD config file

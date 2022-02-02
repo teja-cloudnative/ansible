@@ -7,3 +7,9 @@
       loop:
         - Teja
         - Siri
+    - name: Demo on list values, Each value is map
+      ansible.builtin.debug:
+        msg: Hello {{item.name}}, Welcome to {{item.course}} training
+      loop:
+          - {name: Teja, course: Devops}
+          - {name: Siri, course: Nutrition}

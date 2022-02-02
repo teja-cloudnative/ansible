@@ -1,10 +1,10 @@
-#- name: Setup Frontend Componenet
-#  hosts: FRONTEND
-#  become: yes
-#  tags:
-#    - frontend
-#  roles:
-#    - frontend
+- name: Setup Frontend Componenet
+  hosts: FRONTEND
+  become: yes
+  tags:
+    - frontend
+  roles:
+    - frontend
 
 - name: Setup Mongodb Component
   hosts: MONGODB
@@ -30,3 +30,19 @@
     - redis
   roles:
     - redis
+
+- name: Setup User Component
+  hosts: USER
+  become: yes
+  tags:
+    - user
+  roles:
+    - user
+
+- name: Setup Cart Component
+  hosts: CART
+  become: yes
+  tags:
+    - cart
+  roles:
+    - cart

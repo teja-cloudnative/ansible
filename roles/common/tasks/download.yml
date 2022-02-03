@@ -2,6 +2,7 @@
   ansible.builtin.user:
     name: roboshop
     state: present
+  register: appuser
 
 - name: Download {{COMPONENT}} from git repo
   ansible.builtin.unarchive:

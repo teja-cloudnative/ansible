@@ -34,10 +34,6 @@
       ansible.builtin.shell: grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}'
       register: mysql_output
 
-    - name: Print
-      ansible.builtin.debug:
-        msg: "{{mysql_output}}"
-
     - name: Copy Password Reset SQL
       ansible.builtin.copy:
         src: pass-reset.sql

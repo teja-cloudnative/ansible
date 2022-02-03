@@ -1,9 +1,9 @@
 - name: Print Conditions
   hosts: localhost
   vars:
-    a: 11
-    b: abcd
-    c: true
+    a: 1
+    b: abc
+    c: false
   tasks:
     - name: Print 1
       debug:

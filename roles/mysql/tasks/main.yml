@@ -15,7 +15,7 @@
     enabled: yes
 
 - name: Find the temporary Password
-  ansible.builtin.shell: grep 'temporary password' /var/log/mysqld.log | awk '{print $NS}'
+  ansible.builtin.shell: grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}'
   register: mysql_output
 
 - name: Print

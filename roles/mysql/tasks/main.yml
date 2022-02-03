@@ -39,5 +39,6 @@
         src: pass-reset.sql
         dest: /tmp/pass.sql
 
-    - name: Change the default Password
-      ansible.builtin.shell: mysql --connect-expired-password -uroot -p"${{mysql_output.stdout}}" </tmp/pass.sql
+    - name: Change Default password
+        ansible.builtin.shell: mysql --connect-expired-password -uroot -p"{{mysql_output.stdout}}" </tmp/pass.sql
+

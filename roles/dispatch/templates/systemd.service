@@ -1,10 +1,13 @@
 [Unit]
-Description = Catalogue Service
+Description = Dispatch Service
 [Service]
 User=roboshop
-Environment=MONGO_URL="mongodb://mongodb.roboshop.internal:27017/catalogue"
-ExecStart=/bin/node /home/roboshop/catalogue/server.js
-SyslogIdentifier=catalogue
+Environment=AMQP_HOST=rabbitmq.roboshop.internal
+Environment=AMQP_USER=roboshop
+Environment=AMQP_PASS=roboshop123
+ExecStart=/home/roboshop/dispatch/dispatch
+SyslogIdentifier=dispatch
 
 [Install]
 WantedBy=multi-user.target
+

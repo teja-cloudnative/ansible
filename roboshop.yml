@@ -61,14 +61,14 @@
     - shipping
   roles:
     - shipping
-#
-#- name: Setup RabbitMQ Component
-#  hosts: RABBITMQ
-#  become: yes
-#  tags:
-#    - rabbitmq
-#  roles:
-#    - rabbitmq
+
+- name: Setup RabbitMQ Component
+  hosts: RABBITMQ
+  become: yes
+  tags:
+    - rabbitmq
+  roles:
+    - rabbitmq
 #
 #- name: Setup Payment Component
 #  hosts: PAYMENT

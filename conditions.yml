@@ -1,8 +1,8 @@
 - name: Print Conditions
   hosts: localhost
   vars:
-    a: 1
-    b: abc
+    a: 11
+    b: abcd
     c: true
   tasks:
     - name: Print 1

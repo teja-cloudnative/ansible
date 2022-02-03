@@ -3,6 +3,15 @@
   vars:
     sample: abc
   tasks:
-    - name: Print a variable
+    - name: Print a variable in Uppercase
       ansible.builtin.debug:
         msg: "{{sample | upper}}"
+
+- name: Demo on Filters
+  hosts: localhost
+  vars:
+    sample: ABCD
+  tasks:
+    - name: Print in Lowecase
+      ansible.builtin.debug:
+        msg: "{{sample | lower}}"

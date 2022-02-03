@@ -37,6 +37,9 @@
     msg: "{{mysql_output}}"
   when: check_pass.failed
 
+- name: Copy Password Reset SQL
+
+
 - name: Change the default Password
-  ansible.builtin.shell: mysql --connect-expired-password -uroot -p"${{mysql_output.stdout}}"
+  ansible.builtin.shell: mysql --connect-expired-password -uroot -p"${{mysql_output.stdout}}" </tmp/pass.sql
   when: check_pass.failed

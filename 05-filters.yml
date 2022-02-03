@@ -3,6 +3,6 @@
   vars:
     sample: abc
   tasks:
-    -name: Print a variable
-     debug:
-       msg: "{{sample | upper}}"
+    - name: Print a variable
+      ansible.builtin.debug:
+        msg: "{{sample | upper}}"

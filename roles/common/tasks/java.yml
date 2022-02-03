@@ -1,11 +1,6 @@
-- name: Setup repo file for NodeJS
-  ansible.builtin.shell: curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash -
-
-- name: Install NodeJS
+- name: Install Maven
   ansible.builtin.yum:
-    name:
-      - nodejs
-      -  gcc-c++
+    name: maven
     state: installed
 
 - name: Setup App User and App Code
@@ -14,7 +9,7 @@
     tasks_from: download
 
 - name: Install {{COMPONENT}} Dependencies.
-  community.general.npm:
+  ansible.builtin.shell: mvn clean package && target/shipping-1.0.jar shipping.jar
     path: /home/roboshop/{{COMPONENT}}
   become_user: roboshop
 
@@ -22,7 +17,6 @@
   ansible.builtin.import_role:
     name: common
     tasks_from: systemd
-
 
 
 

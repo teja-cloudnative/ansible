@@ -14,6 +14,12 @@
     state: restarted
     enabled: yes
 
+- name: Check if new password is working
+  mysql_info:
+    login_user: root
+    login_password: RoboShop@1
+    filter: databases
+
 - name: Find the temporary Password
   ansible.builtin.shell: grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}'
   register: mysql_output

@@ -20,6 +20,11 @@
     login_password: RoboShop@1
     filter: databases
 
+- name: Install PyMySQL
+  ansible.builtin.yum:
+    name: PyMySQL
+    state: installed
+
 - name: Find the temporary Password
   ansible.builtin.shell: grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}'
   register: mysql_output

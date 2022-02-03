@@ -30,7 +30,9 @@
 - name: Find the temporary Password
   ansible.builtin.shell: grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}'
   register: mysql_output
+  when: check_pass.failed
 
 - name: Print
   ansible.builtin.debug:
     msg: "{{mysql_output}}"
+  when: check_pass.failed

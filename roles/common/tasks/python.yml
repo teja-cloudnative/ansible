@@ -16,9 +16,14 @@
     requirements: /home/roboshop/{{COMPONENT}}/requirements.txt
     executable: pip3
 
-- name: Print
-  debug:
-    msg: "{{appuser}}"
+- name: Replace UID and GID in {{COMPONENT}} Configuration
+  lineinfile:
+    path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
+    search_string: "{{item.search}}"
+    line: "{{item.search}} = {{item.replace}}"
+  loop:
+    - {search: uid, replace: "{{appUser.uid}}"}
+    - {search: gid, replace: "{{appUser.group}}"}
 
 - name: Setup App User and App Code
   ansible.builtin.import_role:

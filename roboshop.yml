@@ -78,10 +78,10 @@
   roles:
     - payment
 
-#- name: Setup Dispatch Component
-#  hosts: DISPATCH
-#  become: yes
-#  tags:
-#    - dispatch
-#  roles:
-#    - dispatch
+- name: Setup Dispatch Component
+  hosts: DISPATCH
+  become: yes
+  tags:
+    - dispatch
+  roles:
+    - dispatch

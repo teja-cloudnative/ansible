@@ -14,7 +14,6 @@
   roles:
     - mongodb
 
-
 - name: Setup Catalogue Component
   hosts: CATALOGUE
   become: yes

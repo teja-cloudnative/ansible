@@ -4,5 +4,5 @@
     sample: abc
   tasks:
     -name: Print a variable
-     ansible.builtin.debug:
+     debug:
        msg: "{{sample | upper}}"

@@ -15,10 +15,15 @@
     state: absent
 
 - name: Copy roboshop content to HTML directory
-  ansible.builtin.copy:
+  ansible.builtin.template:
     src: /tmp/frontend-main/static/
     dest: /usr/share/nginx/html/
     remote_src: yes
+
+- name: Update Roboshop Configuration
+  ansible.builtin.copy:
+    src: roboshop.conf
+    dest: /etc/nginx/default.d/roboshop.conf
 
 - name: Start the Nginx Service
   ansible.builtin.systemd:

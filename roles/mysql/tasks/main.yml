@@ -16,7 +16,7 @@
 
 - name: Install PyMySQL
   ansible.builtin.yum:
-    name: PyMySQL
+    name: MySQL-python
     state: installed
 
 - name: Check if new password is working

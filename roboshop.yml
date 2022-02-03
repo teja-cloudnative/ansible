@@ -46,3 +46,43 @@
     - cart
   roles:
     - cart
+
+- name: Setup MySQL Component
+  hosts: MYSQL
+  become: yes
+  tags:
+    - mysql
+  roles:
+    - mysql
+
+- name: Setup Shipping Component
+  hosts: SHIPPING
+  become: yes
+  tags:
+    - shipping
+  roles:
+    - shipping
+
+- name: Setup RabbitMQ Component
+  hosts: RABBITMQ
+  become: yes
+  tags:
+    - rabbitmq
+  roles:
+    - rabbitmq
+
+- name: Setup Payment Component
+  hosts: PAYMENT
+  become: yes
+  tags:
+    - payment
+  roles:
+    - payment
+
+- name: Setup Dispatch Component
+  hosts: DISPATCH
+  become: yes
+  tags:
+    - dispatch
+  roles:
+    - dispatch

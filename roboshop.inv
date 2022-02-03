@@ -10,3 +10,13 @@ redis.roboshop.internal
 user.roboshop.internal
 [CART]
 cart.roboshop.internal
+[MYSQL]
+mysql.roboshop.internal
+[SHIPPING]
+shipping.roboshop.internal
+[RABBITMQ]
+rabbitmq.roboshop.internal
+[PAYMENT]
+payment.roboshop.internal
+[DISPATCH]
+dispatch.roboshop.internal

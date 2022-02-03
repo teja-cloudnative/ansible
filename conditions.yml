@@ -3,7 +3,7 @@
   vars:
     a: 1
     b: abc
-    c: false
+    c: true
   tasks:
     - name: Print 1
       debug:

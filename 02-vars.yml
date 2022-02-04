@@ -39,7 +39,6 @@
     - name: Print URL
       ansible.builtin.debug:
         msg: URL == {{URL}}
-  ignore_errors: yes
 
 ##Variable Precedence
 

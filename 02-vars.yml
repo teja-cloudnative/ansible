@@ -1,5 +1,5 @@
 - name: Variables in Play Level
-  hosts: localhost
+  hosts: all
   vars:
     URL: varaible.example.com
   tasks:
@@ -9,7 +9,7 @@
 #Note: If you declare a variable in play level all the tasks can access variable.
 
 - name: Variables from file in Play Level
-  hosts: localhost
+  hosts: all
   vars_files:
    - sample-vars.yml
   tasks:
@@ -19,7 +19,7 @@
 #Note: We can load all the variables from a file, since it is on play level, all tasks can access those variables.
 
 - name: Variables on task level
-  hosts: localhost
+  hosts: all
   tasks:
     - name: Print URL in Task1
       ansible.builtin.debug:
@@ -34,7 +34,7 @@
 #Note: Scope of task variable is only that task, the other tasks cannot access the other tasks variables.
 
 - name: Inventory Variable
-  hosts: localhost
+  hosts: all
   tasks:
     - name: Print URL
       ansible.builtin.debug:
@@ -44,7 +44,7 @@
 ##Variable Precedence
 
 - name: Variable Precedence
-  hosts: localhost
+  hosts: all
   vars:
     URL: play.example.com
   vars_files:
@@ -59,7 +59,7 @@
 # Print a hostname of remote node
 
 - name: Print remote host details
-  hosts: localhost
+  hosts: all
   tasks:
     - name: Print Hostname
       ansible.builtin.debug:
@@ -71,7 +71,7 @@
 # Print a runtime variable from output of previous task.
 
 - name: Register a Variable
-  hosts: localhost
+  hosts: all
   tasks:
     - name: Run Uptime Commmand
       ansible.builtin.shell: uptime

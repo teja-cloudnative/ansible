@@ -4,7 +4,7 @@ LOG=/tmp/instance-create.log
 rm -f $LOG
 
 INSTANCE_CREATE() {
-  INSTANCE_NAME=$1
+  INSTANCE_NAME=$1-dev
   if [ -z "${INSTANCE_NAME}" ]; then
     echo -e "\e[1;33mInstance Name Argument is needed\e[0m"
     exit

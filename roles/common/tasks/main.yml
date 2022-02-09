@@ -2,5 +2,5 @@
   ansible.builtin.shell: set-hostname {{COMPONENT}}
 
 - name: Install Prometheus Node Exporter
-  Shell: curl https://raw.githubusercontent.com/linuxautomations/labautomation/master/tools/prometheus-node-exporter/install.sh | bash
+  shell: curl  https://raw.githubusercontent.com/linuxautomations/labautomation/master/tools/prometheus-node-exporter/install.sh | bash
   when: APPTYPE == "app" or APPTYPE == "web"

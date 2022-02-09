@@ -1,0 +1,4 @@
+- name: Copy Prometheus Config file
+  template:
+    src: prometheus.yml
+    dest: /opt/prometheus/prometheus.yml

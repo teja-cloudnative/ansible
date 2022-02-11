@@ -29,7 +29,7 @@ scrape_configs:
       - targets: ["localhost:9090"]
 
 
-  - job_name: 'node'
+  - job_name: "ec2-nodes-sd"
     relabel_configs:
       - source_labels: [ "__meta_ec2_tag_Name" ]
         target_label: "nodeName"

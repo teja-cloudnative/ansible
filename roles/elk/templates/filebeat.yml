@@ -3,8 +3,8 @@ filebeat.inputs:
 - type: filestream
   enabled: true
   paths:
-{% for component in LOG_FILES %}
-    - {{LOG_FILES}}
+{% for logfile in LOG_FILES %}
+    - {{logfile}}
 {% endfor %}
 
 output.logstash:

@@ -1,0 +1,26 @@
+
+filebeat.inputs:
+- type: filestream
+  enabled: true
+  paths:
+{% for component in LOG_FILES %}
+    - {{logfile}}
+{% endfor %}
+
+output.logstash:
+  # The Logstash hosts
+  hosts: [ "logstash.roboshop.interal:5044" ]
+
+#Default Config
+filebeat.config.modules:
+  path: ${path.config}/modules.d/*.yml
+  reload.enabled: false
+setup.template.settings:
+  index.number_of_shards: 1
+setup.kibana:
+processors:
+  - add_host_metadata:
+      when.not.contains.tags: forwarded
+  - add_cloud_metadata: ~
+  - add_docker_metadata: ~
+  - add_kubernetes_metadata: ~

@@ -1,5 +1,5 @@
 - name: Copy Fibebeat Cofig
-  cpoy:
+  copy:
     src: ealstic.repo
     dest: /etc/yum.repos.d/elastic.repo
 

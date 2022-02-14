@@ -6,7 +6,7 @@
   when: APPTYPE == "app" or APPTYPE == "web"
 
 - name: Install Filebeat
-  asible.builtin.import_role:
+  ansible.builtin.import_role:
     name: elk
     tasks_from: filebeat
   when: APPTYPE == "app" or APPTYPE == "web"

@@ -10,8 +10,8 @@ receivers:
       - to: "btejaparmod@gmail.com"
         from: "btejaparmod@gmail.com"
         smarthost: "email-smtp.us-east-1.amazonaws.com:587"
-        auth_username: AKIA5NCR4W5KKNRPSV5N
-        auth_password: BN42nxoSIwtTUsJu1Wbua7j4KGXFmuWN5N/evoXhGxgP
+        auth_username: "{{SES_USER}}"
+        auth_password: "{{SES_PASS}}"
 inhibit_rules:
   - source_match:
       severity: 'critical'

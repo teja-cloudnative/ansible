@@ -8,7 +8,7 @@ filebeat.inputs:
 {% endfor %}
 
 output.logstash:
-  hosts: ["logstash.roboshop.interal:5044"]
+  hosts: ["logstash.roboshop.internal:5044"]
 
 #Default Config
 filebeat.config.modules:

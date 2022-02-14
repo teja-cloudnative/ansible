@@ -4,7 +4,7 @@ filebeat.inputs:
   enabled: true
   paths:
 {% for logfile in LOG_FILES %}
-    - {{LOG_FILE}}
+    - {{LOG_FILES}}
 {% endfor %}
 
 output.logstash:

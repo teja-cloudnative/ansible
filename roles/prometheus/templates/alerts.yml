@@ -1,0 +1,18 @@
+groups:
+  - name: example
+    rules:
+      - alert: Disk Usgae Alert
+        expr: ceil(((node_filesystem_size_bytes{mountpoint="/"}-node_filesystem_free_bytes{mountpoint="/"})*100/node_filesystem_size_bytes{mountpoint="/"})) > 50
+        for: 1m
+        labels:
+          severity: Warning
+        annotations:
+          summary: High Disk Usage Alert Warning
+
+      - alert: Disk Usgae Alert
+          expr: ceil(((node_filesystem_size_bytes{mountpoint="/"}-node_filesystem_free_bytes{mountpoint="/"})*100/node_filesystem_size_bytes{mountpoint="/"})) > 70
+          for: 1m
+          labels:
+            severity: Critical
+          annotations:
+            summary: High Disk Usage Alert Critical

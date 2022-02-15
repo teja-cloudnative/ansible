@@ -1,4 +1,4 @@
 COMPONENT: cart
 APPTYPE: app
 LOG_FILES:
-  - /var/log/messages
+  - /var/log/cart.log

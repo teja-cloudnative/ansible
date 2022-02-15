@@ -1,0 +1,11 @@
+- name: Setup Logstash
+  ansible.builtin.import_role:
+    name:elk
+    tasks_from: logstash
+  tags: logstash
+
+- name: Setup AFilebeat
+  ansible.builtin.import_role:
+    name: elk
+    tasks_from: filebeat
+  tags: filebeat

@@ -19,6 +19,9 @@ filebeat.inputs:
   multiline.negate: true
   multiline.match: after
 {% endif %}
+{% if COMPONENT == "payment" %}
+  include_lines: [ '^\[2' ]
+{% endif %}
 output.logstash:
   hosts: ["logstash.roboshop.internal:5044"]
 

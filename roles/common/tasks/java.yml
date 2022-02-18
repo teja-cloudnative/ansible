@@ -8,13 +8,13 @@
     name: common
     tasks_from: download
 
-- name: Install {{COMPONENT}} Dependencies.
+- name: Install {{COMPONENT}} Dependencies
   ansible.builtin.shell: mvn clean package && mv target/shipping-1.0.jar shipping.jar
   args:
     chdir: /home/roboshop/{{COMPONENT}}
   become_user: roboshop
 
-- name: Setup App User and App Code
+- name: Configure SystemD for {{COMPONENT}}
   ansible.builtin.import_role:
     name: common
     tasks_from: systemd

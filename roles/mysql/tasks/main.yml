@@ -27,9 +27,9 @@
 #  ignore_errors: yes
 #  register: check_pass
 
-- name: Check if new password is working
-  shell: echo "show databases" | mysql -uroot -p"{{MYSQL_NEW_PASSWORD}}"
-  register: check_pass
+#- name: Check if new password is working
+#  shell: echo "show databases" | mysql -uroot -p"{{MYSQL_NEW_PASSWORD}}"
+#  register: check_pass
 
 - name: Password Change Block
   when: check_pass.failed
